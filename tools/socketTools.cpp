@@ -62,7 +62,7 @@ bool TcpClient::connectToServer(const char *ip, int port) {
 }
 
 // 发送数据
-bool TcpClient::sendData(const void *data, const size_t length) {
+bool TcpClient::sendData(const void *data, const size_t length) const {
     if (socket_fd == INVALID_SOCKET) {
         return false;
     }
@@ -87,7 +87,7 @@ bool TcpClient::sendData(const void *data, const size_t length) {
 }
 
 // 接收数据
-bool TcpClient::receiveData(void *buffer, const size_t length) {
+bool TcpClient::receiveData(void *buffer, const size_t length) const {
     if (socket_fd == INVALID_SOCKET) return false;
     size_t total_received = 0;
     while (total_received < length) {

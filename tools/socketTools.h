@@ -33,10 +33,10 @@ public:
     bool connectToServer(const char *ip, int port);
 
     // 发送数据
-    bool sendData(const void *data, size_t length);
+    bool sendData(const void *data, size_t length) const;
 
     // 接收数据
-    bool receiveData(void *buffer, size_t length);
+    bool receiveData(void *buffer, size_t length) const;
 
     // 断开连接
     void disconnect();
